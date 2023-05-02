@@ -2,7 +2,7 @@ import firebase from "../firebase";
 
 const db = firebase.collection("/instagrart17");
 
-class photosDataService {
+class PhotosDataService {
     getAll() {
     return db;
 }
