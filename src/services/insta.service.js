@@ -22,4 +22,4 @@ delete(id) {
 
 const photosDataService = new PhotosDataService();
 
-export default new photosDataService();
+export default photosDataService();
