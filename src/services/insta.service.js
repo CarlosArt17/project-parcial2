@@ -20,4 +20,6 @@ delete(id) {
 }
 }
 
-export default new PhotosDataService();
+const photosDataService = new PhotosDataService();
+
+export default new photosDataService();
