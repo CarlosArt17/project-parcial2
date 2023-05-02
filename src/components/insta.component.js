@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import TutorialDataService from "../services/insta.service";
+import photosDataService from "../services/insta.service";
 
 export default class Tutorial extends Component {
     constructor(props) {
@@ -61,7 +61,7 @@ export default class Tutorial extends Component {
     }
 
     updatePublished(status) {
-        TutorialDataService.update(this.state.currentTutorial.id, {
+        photosDataService.update(this.state.currentTutorial.id, {
             published: status,
         })
         .then(() => {
@@ -84,7 +84,7 @@ export default class Tutorial extends Component {
             description: this.state.currentTutorial.description,
         };
 
-        TutorialDataService.update(this.state.currentTutorial.id, data)
+        photosDataService.update(this.state.currentTutorial.id, data)
         .then(() => {
             this.setState({
                 message: "The tutorial was updated successfully!",
@@ -96,7 +96,7 @@ export default class Tutorial extends Component {
     }
 
     deleteTutorial() {
-        TutorialDataService.delete(this.state.currentTutorial.id)
+        photosDataService.delete(this.state.currentTutorial.id)
         .then(() => {
             this.props.refreshList();
         })

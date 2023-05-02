@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import TutorialDataService from "../services/insta.service";
+import photosDataService from "../services/insta.service";
 
 import "firebase/compat/storage";
 import firebase from "firebase/compat/app";
@@ -67,7 +67,7 @@ export default class AddTutorial extends Component {
             published: false,
             url: this.state.url
         };
-        TutorialDataService.create(data)
+        photosDataService.create(data)
         .then(() => {
             console.log("Created new item successfully!");
             this.setState({

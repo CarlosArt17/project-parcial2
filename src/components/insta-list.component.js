@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import PhotosDataService from "../services/insta.service";
+import photosDataService from "../services/insta.service";
 
 import Insta from "./insta.component";
 
@@ -20,7 +20,7 @@ export default class PhotosList extends Component {
   }
 
   componentDidMount() {
-    this.unsubscribe = PhotosDataService.getAll().orderBy("title", "asc").onSnapshot(this.onDataChange);
+    this.unsubscribe = photosDataService.getAll().orderBy("title", "asc").onSnapshot(this.onDataChange);
   }
 
   componentWillUnmount() {
