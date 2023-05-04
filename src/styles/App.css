@@ -51,7 +51,6 @@
 
 .logo-right {
   width: 50mm;
-  align-items: end;
   transition: all 0.3s;
   display: flex;
   justify-content: flex-end;
