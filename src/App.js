@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import './styles/App.css';
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, Link} from "react-router-dom";
 import ImageFondo from "./images/fondo.jpeg"
 import "bootstrap/dist/css/bootstrap.min.css";
 
