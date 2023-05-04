@@ -18,7 +18,7 @@ class App extends Component {
         <div className="menu menu-left">
           <Link to={"/inicio"}>Inicio</Link>
           <Link to={"/list"}>Recuerdos</Link>
-          <Link to={"/add"}>Agregar Recuerdos</Link>
+          <Link to={"/add"}>Agregar Recuerdo</Link>
         </div>
       </div>
       <div className="menu menu-right">
