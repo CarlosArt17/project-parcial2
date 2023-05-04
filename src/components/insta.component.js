@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import photosDataService from "../services/insta.service";
+import '../styles/photo.css'
+import ReactionsComponent from "./reactions.component";
+import CommentsComponent from "./comments.component";
 
 export default class Tutorial extends Component {
     constructor(props) {
@@ -9,15 +12,16 @@ export default class Tutorial extends Component {
         this.updatePublished = this.updatePublished.bind(this);
         this.updateTutorial = this.updateTutorial.bind(this);
         this.deleteTutorial = this.deleteTutorial.bind(this);
-
+        
         this.state = {
             currentTutorial: {
-                id: null,
-                title: "",
-                description: "",
-                published: false,
+                id: props.tutorial.id,
+                title: props.tutorial.title,
+                description: props.tutorial.description,
+                published: props.tutorial.published,
+                url: props.tutorial.url,
             },
-        message: "",
+            message: "",
         };
     }
     
@@ -37,7 +41,7 @@ export default class Tutorial extends Component {
             currentTutorial: this.props.tutorial,
         });
     }
-    
+
     onChangeTitle(e) {
         const title = e.target.value;
         this.setState(function (prevState) {
@@ -82,12 +86,13 @@ export default class Tutorial extends Component {
         const data = {
             title: this.state.currentTutorial.title,
             description: this.state.currentTutorial.description,
+            url: this.state.currentTutorial.url,
         };
-
+        
         photosDataService.update(this.state.currentTutorial.id, data)
         .then(() => {
             this.setState({
-                message: "The tutorial was updated successfully!",
+                message: "The photo was updated successfully!",
             });
         })
         .catch((e) => {
@@ -105,66 +110,26 @@ export default class Tutorial extends Component {
         });
     }
     
-    render() { 
+    render() {
         const { currentTutorial } = this.state;
         return (
-        <div>
-            <h4>Tutorial</h4>
-            {currentTutorial ? (
-            <div className="edit-form">
-                <form>
-                    <div className="form-group">
-                        <label htmlFor="title">Title</label>
-                        <input
-                        type="text"
-                        className="form-control"
-                        id="title"
-                        value={currentTutorial.title}
-                        onChange={this.onChangeTitle}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="description">Description</label>
-                        <input
-                        type="text"
-                        className="form-control"
-                        id="description"
-                        value={currentTutorial.description}
-                        onChange={this.onChangeDescription}
-                        />
-                    </div>
-                    <div className="form-group">
-                        <label>
-                            <strong>Status:</strong>
-                        </label>
-                        {currentTutorial.published ? "Published" : "Pending"}
-                    </div>
-                </form>
-                {currentTutorial.published ? (
-                <button className="badge badge-primary mr-2" onClick={() => this.updatePublished(false)}>
-                    UnPublish
-                </button>
-            ) : (
-                <button className="badge badge-primary mr-2" onClick={() => this.updatePublished(true)}>
-                Publish
-                </button>
-            )}
-            <button className="badge badge-danger mr-2" onClick={this.deleteTutorial}>
-                Delete
-            </button>
-
-            <button type="submit" className="badge badge-success" onClick={this.updateTutorial}>
-                Update
-            </button>
-            <p>{this.state.message}</p>
+        <div className="photo-container">
+            <div className="photo">
+                {currentTutorial ? (
+                <div className="edit-form">
+                    <form>
+                        <h4>{currentTutorial.title}</h4>
+                        <h4>{currentTutorial.description}</h4>
+                        < ReactionsComponent />
+                        < CommentsComponent />
+                    </form>
+                </div>
+                ) : (
+                <div>
+                </div>
+                )}
             </div>
-            ) : (
-            <div>
-                <br />
-                <p>Please click on a Tutorial...</p>
-            </div>
-            )}
         </div>
-        );   
+        );
     }
 }
