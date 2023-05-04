@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import './styles/App.css';
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link} from "react-router-dom";
 import ImageFondo from "./images/fondo.jpeg"
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -16,9 +16,9 @@ class App extends Component {
       <img className="image-nav" src={ImageFondo} alt="" />
       <div className="menu-items">
         <div className="menu menu-left">
-          <a href="/inicio">Inicio</a>
-          <a href="/list">Recuerdos</a>
-          <a href="/add">Agregar Recuerdos</a>
+          <Link to={"/inicio"}>Inicio</Link>
+          <Link to={"/list"}>Recuerdos</Link>
+          <Link to={"/add"}>Agregar Recuerdos</Link>
         </div>
       </div>
       <div className="menu menu-right">
