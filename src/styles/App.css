@@ -17,6 +17,7 @@
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
+  align-items: flex-end;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -51,10 +52,9 @@
 
 .logo-right {
   width: 50mm;
-  align-items: end;
   transition: all 0.3s;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-end;
   padding: 5px;
 }
 
@@ -71,6 +71,7 @@ body,
 
 nav {
   display: flex;
+  align-items: flex-end;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
@@ -94,6 +95,7 @@ nav img {
 .menu-items,
 .menu {
   display: flex;
+  align-items: flex-end;
   gap: 16px;
 }
 
@@ -149,6 +151,7 @@ a:is(:visited, :active) {
 
 body.open .menu-items {
   display: flex;
+  align-items: flex-end;
 }
 @keyframes App-logo-spin {
   from {
