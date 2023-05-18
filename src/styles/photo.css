@@ -45,6 +45,25 @@
     background-image: url('../images/heart.png');
 }
 
+.reaction-like{
+    background-image: url('../images/like.png');
+}
+
+.reaction-important{
+    background-image: url('../images/me-encanta.png');
+}
+
+.reaction-funny{
+    background-image: url('../images/me-divierte.png');
+}
+
+.reaction-anger{
+    background-image: url('../images/me-enoja.png');
+}
+
+.reaction-sad{
+    background-image: url('../images/me-entristece.png');
+}
 
 .comment-section {
     width: 100%;
