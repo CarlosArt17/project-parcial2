@@ -1,5 +1,6 @@
 import React from "react";
 import '../styles/photo.css'
+import kafkaService from "../services/kafka.service";
 
 function saveLike(e, status) { 
   let data = {
