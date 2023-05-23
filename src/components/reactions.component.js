@@ -12,7 +12,7 @@ function ReactionsComponent() {
   
      console.log(JSON.stringify(data));
   
-     KafkaService.reaction("i-love-adsoftsito");
+     kafkaService.reaction("i-love-adsoftsito");
      e.preventDefault();
  }
 
