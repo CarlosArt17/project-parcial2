@@ -17,4 +17,6 @@ class KafkaService {
    }); 
    }
 }
-export default new KafkaService();
+
+const kafkaService = new KafkaService();
+export default kafkaService;
