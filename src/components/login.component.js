@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { auth, provider } from "../config";
 import { signInWithPopup, signInWithEmailAndPassword, signOut } from "firebase/auth";
-import "../styles/App.css";
+import "../styles/index.css";
 
 function Signin() {
     const [email, setEmail] = useState('');
@@ -61,10 +61,10 @@ function Signin() {
         ) : (
         <div>
             <div class="contenedor" >
-                <h1>Interstellar</h1>
+                <h1>Instagramart17</h1>
             </div>    
         <div class="contenedor2" >
-            <h1>INICIAR SESION </h1>
+            <h1>Inicio Sesion </h1>
         </div>
         <div class="contenedor3" >
             <button class='button3' onClick={handleSignInWithGoogle}>

@@ -20,12 +20,10 @@ body {
   }
   
   .contenedor{  
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    min-height: 100vh;
-    margin-top: -286px;
+    position: absolute;
+    top: 40%;
+    left: 50%; /* Ajusta el valor del 'left' para separar los elementos */
+    transform: translate(-50%, -50%);
   }
   .contenedor2{  
       position: absolute;
@@ -34,7 +32,8 @@ body {
       transform: translate(-50%, -50%);
   }
   .contenedor3{  
-    display: flex;
-    justify-content: center;
-    margin-top: 100px;
+    position: absolute;
+    top: 60%;
+    left: 50%; /* Ajusta el valor del 'left' para separar los elementos */
+    transform: translate(-50%, -50%);
   }
