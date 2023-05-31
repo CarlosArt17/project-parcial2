@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import kafkaService from '../services/kafka.service';
+import kafkaService from "../services/kafka.service";
 
 class ReactionsComponet extends Component {
   constructor(props) {
@@ -25,7 +25,7 @@ class ReactionsComponet extends Component {
   
     kafkaService.reaction("i-love-adsoftsito");
     e.preventDefault();
- }
+  }
 
   
 

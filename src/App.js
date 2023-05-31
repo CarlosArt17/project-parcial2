@@ -7,6 +7,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import AddInsta from "./components/add-insta.component";
 import InstaList from "./components/insta-list.component";
 import HomePage from "./components/home-page.component";
+import Login from "./components/login.component";
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
           <Link to={"/inicio"}>Inicio</Link>
           <Link to={"/list"}>Recuerdos</Link>
           <Link to={"/add"}>Agregar Recuerdo</Link>
+          <Link to={"/login"}>Inicio Sesion</Link>
         </div>
       </div>
       <div className="menu menu-right">
@@ -26,10 +28,13 @@ class App extends Component {
       </div>
       </nav>
 
+      
+
           <Routes>
             <Route path="list" element={<InstaList />} />
             <Route path="add" element={<AddInsta />} />
             <Route path="inicio" element={<HomePage />} />
+            <Route path="login" element={<Login />} />
           </Routes>
       </div>
     );
