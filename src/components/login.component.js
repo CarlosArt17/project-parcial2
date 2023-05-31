@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { auth, provider } from "../config";
 import { signInWithPopup, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import "../styles/App.css";
-import Ventas from "./clip-list.component";
 
 function Signin() {
     const [email, setEmail] = useState('');
@@ -58,7 +57,6 @@ function Signin() {
             <button className="boton-logout" onClick={handleSignOut}>
                 Logout
             </button>
-            <Ventas />
         </div>
         ) : (
         <div>
