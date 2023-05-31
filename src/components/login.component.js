@@ -52,10 +52,10 @@ function Signin() {
     return (
     <div>
         {email ? (
-        <div>
+        <div className="logout">
             <h2>Bienvenido, {email}!</h2>
             <button className="boton-logout" onClick={handleSignOut}>
-                Logout
+                Cerrar Sesion
             </button>
         </div>
         ) : (

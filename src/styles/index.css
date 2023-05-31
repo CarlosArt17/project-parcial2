@@ -37,3 +37,10 @@ body {
     left: 50%; /* Ajusta el valor del 'left' para separar los elementos */
     transform: translate(-50%, -50%);
   }
+
+  .logout{
+    position: absolute;
+    top: 50%;
+    left: 50%; /* Ajusta el valor del 'left' para separar los elementos */
+    transform: translate(-50%, -50%);
+  }
