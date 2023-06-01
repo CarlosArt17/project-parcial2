@@ -10,6 +10,7 @@ const CommentsComponent = ({ id }) => {
 
   useEffect(() => {
     fetchComments();
+    //eslint-disable-next-line
   }, []);
 
   const fetchComments = async (r) => {
@@ -50,7 +51,7 @@ const CommentsComponent = ({ id }) => {
           onChange={(e) => setCommentText(e.target.value)}
         ></textarea>
       </div>
-      <button type="button" onClick={comment}>
+      <button type="button" onClick={comment}  >
         Comentar
       </button>
       <div className="comments-list">
