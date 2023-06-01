@@ -3,6 +3,8 @@ import photosDataService from "../services/insta.service";
 import '../styles/photo.css'
 import ReactionsComponent from "./reactions.component";
 import CommentsComponent from "./comments.component";
+import Login from "./login.component";
+import { Routes, Route, Link} from "react-router-dom";
 
 export default class Tutorial extends Component {
     constructor(props) {
@@ -112,6 +114,7 @@ export default class Tutorial extends Component {
     
     render() {
         const { currentTutorial } = this.state;
+        const email= localStorage.getItem('email');
         return (
         <div className="photo-container">
             <div className="photo">
@@ -120,8 +123,21 @@ export default class Tutorial extends Component {
                     <form>
                         <h4>{currentTutorial.title}</h4>
                         <h4>{currentTutorial.description}</h4>
-                        < ReactionsComponent />
-                        < CommentsComponent />
+                        {email ?
+                        <>
+                        < ReactionsComponent 
+                        id={currentTutorial.id}
+                        />
+                        < CommentsComponent 
+                        id={currentTutorial.id}
+                        />
+                        </>
+                        :
+                        <div className="section">
+                            <h5>Inicia sesion para poder comentar y reaccionar</h5>
+                            <Link to={"/login"}>Inicio Sesion</Link>
+                        </div>
+                        }
                     </form>
                 </div>
                 ) : (
@@ -129,6 +145,9 @@ export default class Tutorial extends Component {
                 </div>
                 )}
             </div>
+            <Routes>
+                <Route path="login" element={<Login />} />
+            </Routes>
         </div>
         );
     }

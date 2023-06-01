@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { auth, provider } from "../config";
-import { signInWithPopup, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { signInWithPopup, signOut } from "firebase/auth";
 import "../styles/index.css";
+
 
 function Signin() {
     const [email, setEmail] = useState('');
@@ -16,21 +17,7 @@ function Signin() {
             console.log("Error occurred during sign-in with Google:", error);
         });
     };
-    const handleSignInWithEmail = () => {
-        const email = prompt('Ingrese su correo electrónico:');
-        const password = prompt('Ingrese su contraseña:');
-        if (email && password) {
-            signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-                const userEmail = userCredential.user.email;
-                setEmail(userEmail);
-                localStorage.setItem("email", userEmail);
-            })
-            .catch((error) => {
-                console.log("Error occurred during sign-in with email and password:", error);
-            });
-        }
-    };
+
     const handleSignOut = () => {
         signOut(auth)
         .then(() => {
@@ -60,19 +47,16 @@ function Signin() {
         </div>
         ) : (
         <div>
-            <div class="contenedor" >
+            <div className="contenedor" >
                 <h1>Instagramart17</h1>
             </div>    
-        <div class="contenedor2" >
+        <div className="contenedor2" >
             <h1>Inicio Sesion </h1>
         </div>
-        <div class="contenedor3" >
-            <button class='button3' onClick={handleSignInWithGoogle}>
+        <div className="contenedor3" >
+            <button className='button3' onClick={handleSignInWithGoogle}>
                 Sign in with Google
             </button>
-        <button class='button2'onClick={handleSignInWithEmail}>
-            Sign in with Email
-        </button>
         </div>
         </div>
     )}
