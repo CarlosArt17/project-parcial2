@@ -14,6 +14,7 @@ const ReactionsComponent = ({ id }) => {
 
   useEffect(() => {
     fetchReactions();
+    //eslint-disable-next-line
   }, []);
 
   const fetchReactions = async (r) => {
