@@ -33,12 +33,13 @@ const CommentsComponent = ({ id }) => {
     };
 
     console.log(JSON.stringify(data));
-    KafkaService.commentPush(data);
-    e.preventDefault();
+    KafkaService.commentPush(data)
+      e.preventDefault();    
   };
 
   return (
-    <div className="comments-section">
+    <div className="comments-section"
+    onMouseOver={fetchComments}>
       <h4>Comments</h4>
       <div className="form-group">
         <label htmlFor="comment-input">Leave a comment:</label>
@@ -51,7 +52,7 @@ const CommentsComponent = ({ id }) => {
           onChange={(e) => setCommentText(e.target.value)}
         ></textarea>
       </div>
-      <button type="button" onClick={comment}  >
+      <button type="button" onClick={comment}>
         Comentar
       </button>
       <div className="comments-list">
